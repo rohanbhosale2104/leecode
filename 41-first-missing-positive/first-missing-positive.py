@@ -5,9 +5,7 @@ class Solution:
         while(i<n):
             correctIndex=nums[i]-1
             if nums[i]>0 and nums[i]<=n and nums[i]!=nums[correctIndex]:
-                temp=nums[i]
-                nums[i]=nums[correctIndex]
-                nums[correctIndex]=temp
+                nums[i],nums[correctIndex]=nums[correctIndex],nums[i]
             else:
                 i+=1
         for i in range(len(nums)):
