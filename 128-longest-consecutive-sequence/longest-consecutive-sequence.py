@@ -4,16 +4,17 @@ class Solution:
         longest = 0
 
         for num in num_set:
-            # Check if num is the start of a sequence
-            if num - 1 not in num_set:
-                current = num
-                length = 1
 
-                # Count consecutive numbers
+            # Start only if num is the beginning of a sequence
+            if num - 1 not in num_set:
+
+                current = num
+                count = 1
+
                 while current + 1 in num_set:
                     current += 1
-                    length += 1
+                    count += 1
 
-                longest = max(longest, length)
+                longest = max(longest, count)
 
         return longest
