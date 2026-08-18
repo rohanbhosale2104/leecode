@@ -3,4 +3,7 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
-        s.reverse()
+        n = len(s)
+        for i in range(0,int(n/2)):
+            s[i],s[n-1-i] = s[n-1-i],s[i]
+        
