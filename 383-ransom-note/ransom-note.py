@@ -7,4 +7,6 @@ class Solution:
                 return False
             freq[ch]-=1
         return True
-        
+        # if ransomNote in magazine or ransomNote in magazine[::-1]:
+        #     return True
+        # return False
