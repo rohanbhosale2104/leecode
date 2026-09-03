@@ -1,39 +1,46 @@
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
 
-        # Build LPS array
-        lps = [0] * len(needle)
+        # # Build LPS array
+        # lps = [0] * len(needle)
 
-        length = 0
-        i = 1
+        # length = 0
+        # i = 1
 
-        while i < len(needle):
-            if needle[i] == needle[length]:
-                length += 1
-                lps[i] = length
-                i += 1
-            elif length > 0:
-                length = lps[length - 1]
-            else:
-                lps[i] = 0
-                i += 1
+        # while i < len(needle):
+        #     if needle[i] == needle[length]:
+        #         length += 1
+        #         lps[i] = length
+        #         i += 1
+        #     elif length > 0:
+        #         length = lps[length - 1]
+        #     else:
+        #         lps[i] = 0
+        #         i += 1
 
-        # Search needle in haystack
-        i = 0
-        j = 0
+        # # Search needle in haystack
+        # i = 0
+        # j = 0
 
-        while i < len(haystack):
+        # while i < len(haystack):
 
-            if haystack[i] == needle[j]:
-                i += 1
-                j += 1
+        #     if haystack[i] == needle[j]:
+        #         i += 1
+        #         j += 1
 
-                if j == len(needle):
-                    return i - j
+        #         if j == len(needle):
+        #             return i - j
 
-            elif j > 0:
-                j = lps[j - 1]
-            else:
-                i += 1
+        #     elif j > 0:
+        #         j = lps[j - 1]
+        #     else:
+        #         i += 1
 
+        # return -1
+        if len(needle)>len(haystack):
+            return -1
+        for i in range(0,len(haystack) - len(needle)+1):
+            print(haystack[i:i+len(needle)] )
+            if haystack[i:i+len(needle)]  == needle:
+                return i
         return -1
